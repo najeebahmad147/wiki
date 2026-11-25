@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>WIKI HYPE | Ultra Polyglot AI HUD</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="hud" id="hudbox">
+    <div class="top">
+      <div>SYS: <span class="online">ULTRA</span></div>
+      <select id="langselect" class="lang-drop" title="Select Voice Language">
+        <option value="auto">LANG: AUTO (ALL)</option>
+        <option value="hi-IN">HINDI / BIHARI</option>
+        <option value="en-IN">ENGLISH</option>
+        <option value="bn-IN">BANGLA / ASSAMESE</option>
+        <option value="ta-IN">TAMIL</option>
+        <option value="ja-JP">JAPANESE</option>
+        <option value="ko-KR">KOREAN</option>
+        <option value="zh-CN">CHINESE</option>
+        <option value="es-ES">SPANISH</option>
+      </select>
+      <div class="top-btns">
+        <button id="visionbtn" class="mini-btn">VISION</button>
+        <button id="membtn" class="mini-btn">MEMORY</button>
+        <button id="clearbtn" class="mini-btn">CLEAR</button>
+      </div>
+      <div id="clock">00:00</div>
+    </div>
+
+    <div class="middle">
+      <div class="core">
+        <div class="reactor" id="reactor">
+          <div class="ring r1"></div>
+          <div class="ring r2"></div>
+          <div class="ring r3"></div>
+          <button id="micbtn">ULLI</button>
+        </div>
+        <div class="visualizer" id="visualizer">
+          <div class="bar"></div><div class="bar"></div><div class="bar"></div>
+          <div class="bar"></div><div class="bar"></div><div class="bar"></div>
+          <div class="bar"></div><div class="bar"></div>
+        </div>
+        <p id="statustext">Tap ULLI to Speak | All Languages & Singing Ready</p>
+      </div>
+
+      <div id="visionbox" class="vision-box hidden">
+        <video id="camfeed" autoplay playsinline></video>
+        <p>OPTICAL SENSOR ACTIVE</p>
+      </div>
+    </div>
+
+    <div class="term">
+      <div id="chatlog">
+        <p class="aimsg">[WIKI HYPE]: Ultra Polyglot Core online. Built by Najeeb Ahmad. Speak in Hindi, Bhojpuri, Bangla, Tamil, Japanese, Korean, Chinese, Spanish, or ask me to sing!</p>
+      </div>
+      <div class="inp">
+        <input type="text" id="textinput" placeholder="Ask in any language, 'Sing phonk', 'Play cartoon on YouTube', 'WhatsApp...' ">
+        <button id="sendbtn" class="main-btn">EXEC</button>
+        <button id="keybtn" class="main-btn">KEY</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- API Key Modal -->
+  <div id="apimodal" class="modal hidden">
+    <div class="mcontent">
+      <h3>GROQ ULTRA CORE</h3>
+      <p>Paste your Groq API Key below:</p>
+      <input type="password" id="apikeyinput" placeholder="gsk_...">
+      <div class="mactions">
+        <button id="savekeybtn" class="main-btn">SAVE</button>
+        <button id="closemodalbtn" class="main-btn">CANCEL</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Memory & Contacts Modal -->
+  <div id="memmodal" class="modal hidden">
+    <div class="mcontent">
+      <h3>MEMORY & SAVED CONTACTS</h3>
+      <ul id="memlist"></ul>
+      <div class="mactions">
+        <button id="clearmembtn" class="main-btn">WIPE ALL</button>
+        <button id="closemembtn" class="main-btn">CLOSE</button>
+      </div>
+    </div>
+  </div>
+
+  <canvas id="snapcanvas" class="hidden"></canvas>
+  <script src="script.js"></script>
+</body>
+</html>
